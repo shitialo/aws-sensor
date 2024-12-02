@@ -5,10 +5,13 @@ import json
 
 app = FastAPI()
 
-# CORS configuration
+# Update CORS configuration for Netlify
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with your frontend URL in production
+    allow_origins=[
+        "https://aws-sensor.netlify.app",  # Replace with your Netlify domain
+        "http://localhost:3000"  # For local development
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

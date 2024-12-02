@@ -2,6 +2,7 @@
 #include <WebSocketsClient.h>
 #include <Adafruit_SHT31.h>
 #include <ArduinoJson.h>
+#include <Wire.h>
 
 const char* ssid = "Tbag";
 const char* password = "Dbcooper";
@@ -13,6 +14,7 @@ Adafruit_SHT31 sht31 = Adafruit_SHT31();
 
 void setup() {
   Serial.begin(115200);
+  Wire.begin(41, 42);
   Serial.println("Starting setup...");
   
   // Initialize SHT31
